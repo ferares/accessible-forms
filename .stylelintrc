@@ -1,0 +1,18 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-order",
+    "stylelint-use-nesting"
+  ],
+  "rules": {
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "csstools/use-nesting": "always",
+    "declaration-block-no-duplicate-properties": true,
+    "no-descending-specificity": null,
+    "number-leading-zero": "never"
+  }
+}
