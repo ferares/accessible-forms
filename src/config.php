@@ -1,6 +1,4 @@
 <?php
-$nojs = isset($_GET['nojs']);
-
 // List of countries taken from https://gist.github.com/djaiss/2938259
 $countries = [
   "AF" => "Afghanistan",
@@ -243,6 +241,3 @@ $countries = [
   "ZM" => "Zambia",
   "ZW" => "Zimbabwe",
 ];
-
-// Terms and conditions text
-$terms = 'These are the terms and conditions';

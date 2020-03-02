@@ -2,13 +2,19 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <?php require_once('partials/_head.php') ?>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Accessible forms</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
   <body>
-    <!-- Page header -->
-    <?php require_once('partials/_header.php') ?>
 
     <!-- Main content -->
-    <main id="main" tabindex="-1">
+    <main>
       <div class="container">
         <!-- Page title -->
         <div class="row">
@@ -29,17 +35,33 @@
                 </legend>
                 <div class="form-row">
                   <div class="form-group col-md-6">
+                    <label for="input-username">Username (required)</label>
+                    <input id="input-username" type="username" class="form-control" username="username" required aria-describedby="input-username-feedback" autocomplete="username">
+                    <div id="input-username-feedback" class="invalid-feedback" role="alert">
+                      Please input a username.
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
                     <label for="input-email">Email (required)</label>
-                    <input id="input-email" type="email" class="form-control" name="email" required aria-describedby="input-email-feedback" autocomplete="email">
+                    <input id="input-email" type="email" class="form-control" name="email" required aria-describedby="input-email-feedback" autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
                     <div id="input-email-feedback" class="invalid-feedback" role="alert">
                       Please input a valid email address.
                     </div>
                   </div>
+                </div>
+                <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="input-password">Password (required)</label>
                     <input id="input-password" type="password" class="form-control" name="password" required aria-describedby="input-password-feedback" autocomplete="off">
                     <div id="input-password-feedback" class="invalid-feedback" role="alert">
                       Please input a password.
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="input-password2">Confirm password (required)</label>
+                    <input id="input-password2" type="password2" class="form-control" name="password2" required aria-describedby="input-password2-feedback" autocomplete="off">
+                    <div id="input-password2-feedback" class="invalid-feedback" role="alert">
+                      Password and password confirmation don't match or are empty.
                     </div>
                   </div>
                 </div>
@@ -128,7 +150,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <?php echo $terms ?>
+            These are the terms and conditions
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -139,7 +161,13 @@
       </div>
     </div>
 
-    <!-- Scripts -->
-    <?php require_once('partials/_scripts.php') ?>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Custom script -->
+    <script src="/assets/script.js"></script>
   </body>
 </html>
